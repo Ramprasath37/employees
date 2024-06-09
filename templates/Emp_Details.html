@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMPLOYEES DETAILS</title>
+     
+    <link rel="stylesheet" href="../static/css/style.css">
+
+     
+
+    
+
+  
+</head>
+<body>
+    
+
+    
+    <center><h2 class="down">EMPLOYEE DETAILS </h2></center>
+    <table class="center">
+
+        {% load static %}
+        <thead>
+            <tr>
+                <th>Employee Name</th>
+                <th>Employee ID</th>
+                <th>Employee Email ID</th>
+                <th>Employee Mobile NO</th>
+                <th>Employee Address</th>
+                <th>Employee Department</th>
+                <th>Action</th>
+                 
+            </tr>
+        </thead>
+        {% for Emp in Employee_Details %}
+        <tbody >
+            <tr>
+                <td>{{Emp.Emp_Name}}</td>
+                <td>{{Emp.Emp_Id}}</td>
+                <td>{{Emp.Emp_Email_Id}}</td>
+                <td>{{Emp.Emp_Mobile_No}}</td>
+                <td>{{Emp.Emp_Address}}</td>
+                <td>{{Emp.Emp_Department}}</td>
+ 
+                <td> <a href="/edit_employee/ {{Emp.id}}"><button>  EDT</button></a>
+                 <a href="/delete_employee/ {{Emp.id}}"><button>DELETE</button></td></a>
+
+            </tr>
+        </tbody>
+        {% endfor %}
+
+
+
+    </table>
+    <div class="btnn">
+    <a href="/add_employee/"><button>ADD EMPLOYEE</button></a>
+    </div>
+
+   
+</body>
+</html>
